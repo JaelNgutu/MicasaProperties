@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Payment>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>
+
+
+
+<div class="col-xl-4">
+    <div class="card h-100">
+        <div class="card-body">
+            <div class="mt-4">
+
+                <h5 class="font-size-16"> @ViewBag.TenantName</h5>
+                <div class="clearfix"></div>
+
+
+            </div>
+
+            <hr class="my-4">
+
+            <div class="text-muted">
+
+
+                <div class="table-responsive mt-4">
+
+                    <div class="mt-4">
+                        <p class="mb-1">Phone Number :</p>
+                        <h5 class="font-size-16"> @ViewBag.PhoneNumber</h5>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-1">E-mail :</p>
+                        <h5 class="font-size-16"> @ViewBag.Email </h5>
+                    </div>
+                    <div class="mt-4">
+                        <p class="mb-1">Building :</p>
+                        <h5 class="font-size-16"> @ViewBag.BuildingName </h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="col-xl-8">
+    <div class="card mb-0">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs nav-tabs-custom nav-justified" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#about" role="tab">
+                    <i class="uil uil-user-circle font-size-20"></i>
+                    <span class="d-none d-sm-block">Tenant Payment Information </span>
+                </a>
+            </li>
+
+        </ul>
+        <!-- Tab content -->
+        <div class="tab-content p-4">
+            <div class="tab-pane active" id="about" role="tabpanel">
+                <div>
+
+
+                    <div>
+                      
+
+                        <div class="table-responsive">
+                            <table class="table table-nowrap table-hover mb-0">
+                                <thead>
+                                    <tr>
+                                       
+                                        <th scope="col">Projects</th>
+                                        <th scope="col">Date</th>
+                                        <th scope="col">Status</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                           
+                                            <td><a href="#" class="text-dark">@Html.DisplayFor(modelItem => item.Amount)</a></td>
+                                            <td>
+                                                18 Jun, 2020
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-soft-primary font-size-12">Open</span>
+                                            </td>
+                                           
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

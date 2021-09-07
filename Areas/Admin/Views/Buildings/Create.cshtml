@@ -1,0 +1,65 @@
+﻿@model Building
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<hr />
+
+<div class="col-lg-8">
+    <div class="card">
+        <div class="card-body">
+
+
+            <h5 class="font-size-14 mb-4"> Add new building to Micasa Properties</h5>
+
+            <hr />
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger">
+                    <span>Ensure all inputs are correct</span>
+
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Building Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="BuildingName" class="form-control" />
+                        <span asp-validation-for="BuildingName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Units Available</label>
+                    <div class="col-sm-9">
+                        <input asp-for="UnitsAvailable" class="form-control" min="0" max="15" />
+                        <span asp-validation-for="UnitsAvailable" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Cost Per unit</label>
+                    <div class="col-sm-9">
+                        <input asp-for="CostPerUnit" class="form-control" />
+                        <span asp-validation-for="CostPerUnit" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-9">
+                        <div>
+
+                            <input type="submit" value="Add New Building" class="btn btn-primary w-md">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+            <div>
+                <a asp-action="Index">View all buildings</a>
+            </div>
+
+
+            @section Scripts {
+                @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+            }

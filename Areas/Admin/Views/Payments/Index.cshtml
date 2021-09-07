@@ -1,0 +1,102 @@
+﻿@model IEnumerable<MicasaProperties.Models.Payment>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@*<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PaymentID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenantID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PaymentID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenantID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>*@
+
+
+<div class="col-lg-12">
+
+    <div class="table-responsive mb-4">
+        <table class="table table-centered datatable dt-responsive nowrap table-card-list" style="border-collapse: collapse; border-spacing: 0 12px; width: 100%;">
+            <thead>
+                <tr class="bg-transparent">
+                   
+                    <th>Invoice Number</th>
+                    <th>Date</th>
+                    <th>Billing Name</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                   
+                    <th style="width: 120px;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+                        <td><a href="javascript: void(0);" class="text-dark fw-bold"># @Html.DisplayFor(modelItem => item.PaymentID)</a> </td>
+                        <td>
+                            10 Jul, 2020
+                        </td>
+                        <td> @Html.DisplayFor(modelItem => item.Tenant.Name)</td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount)
+                        </td>
+                        <td>
+                            <div class="badge bg-soft-success font-size-12">Paid</div>
+                        </td>
+
+                        <td>
+                            <a href="javascript:void(0);" class="px-3 text-primary"><i class="uil uil-pen font-size-18"></i></a>
+                            <a href="javascript:void(0);" class="px-3 text-danger"><i class="uil uil-trash-alt font-size-18"></i></a>
+                        </td>
+                    </tr>
+                }
+
+
+
+                </tbody>
+        </table>
+    </div>
+</div>

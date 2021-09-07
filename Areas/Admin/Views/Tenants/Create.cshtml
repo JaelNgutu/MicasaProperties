@@ -1,0 +1,71 @@
+﻿@model MicasaProperties.Models.Tenant
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+ph
+
+
+<div class="col-lg-8">
+    <div class="card">
+        <div class="card-body">
+
+
+            <h5 class="font-size-14 mb-4"> Add new building to Micasa Properties</h5>
+
+            <hr />
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Full Name</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Phone Number</label>
+                    <div class="col-sm-9">
+                        <input asp-for="PhoneNumber" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Building</label>
+                    <div class="col-sm-9">
+                        <select asp-for="BuildingID" asp-items="@ViewBag.BuildingId" class="form-control">
+                            <option value="0">Choose apartment</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row justify-content-end">
+                    <div class="col-sm-9">
+                        <div>
+
+                            <input type="submit" value="Add New Tenant" class="btn btn-primary w-md">
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<div>
+    <a asp-action="Index">View all tenants</a>
+</div>
+
+
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
