@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MicasaProperties.Models;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
 
 namespace MicasaProperties.Areas.Admin.Controllers
 {
@@ -15,10 +17,12 @@ namespace MicasaProperties.Areas.Admin.Controllers
         //injecting dependecy
 
         private readonly MicasaContext context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public BuildingsController(MicasaContext context)
+        public BuildingsController(MicasaContext context , IWebHostEnvironment hostEnvironment)
         {
             this.context = context;
+            this._hostEnvironment = hostEnvironment;
         }
 
         //Get all buildings
@@ -51,6 +55,8 @@ namespace MicasaProperties.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Building building)
         {
+        
+
             if (ModelState.IsValid)
             {
 
@@ -63,6 +69,7 @@ namespace MicasaProperties.Areas.Admin.Controllers
             return View(building);
 
         }
+
 
         public async Task<IActionResult> Edit(int Id)
         {

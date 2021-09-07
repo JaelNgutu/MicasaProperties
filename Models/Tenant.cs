@@ -18,9 +18,15 @@ namespace MicasaProperties.Models
 
         public int BuildingID { get; set; }
 
+        public DateTime? DateMoveIn { get; set; }
+
+        public DateTime? DateMoveOut { get; set; }
+
         public Building Building { get; set; }
 
         public ICollection<Payment> Payments { get; set; }
+
+
 
     }
 }
