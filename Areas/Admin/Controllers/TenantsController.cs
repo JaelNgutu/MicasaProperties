@@ -31,7 +31,8 @@ namespace MicasaProperties.Areas.Admin.Controllers
 
 
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
+        
         {
 
             ViewBag.BuildingId = new SelectList(context.Buildings.OrderBy(x => x.BuildingID), "BuildingID", "BuildingName");

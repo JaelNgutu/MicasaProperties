@@ -4,7 +4,6 @@
     ViewData["Title"] = "Create";
 }
 
-ph
 
 
 <div class="col-lg-8">
@@ -21,18 +20,21 @@ ph
                     <label class="col-sm-3 col-form-label">Full Name</label>
                     <div class="col-sm-9">
                         <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label class="col-sm-3 col-form-label">Phone Number</label>
                     <div class="col-sm-9">
                         <input asp-for="PhoneNumber" class="form-control" />
+                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label class="col-sm-3 col-form-label">Email</label>
                     <div class="col-sm-9">
                         <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
                 </div>
                 <div class="row mb-4">
@@ -43,12 +45,20 @@ ph
                         </select>
                     </div>
                 </div>
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Date moved in</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="DateMoveIn" name="DateMoveIn"  class="datepicker form-control" />
+
+                    </div>
+                                    </div>
+                           
 
                 <div class="row justify-content-end">
                     <div class="col-sm-9">
                         <div>
 
-                            <input type="submit" value="Add New Tenant" class="btn btn-primary w-md">
+                            <input type="submit" value="Save" class="btn btn-primary w-md">
                         </div>
                     </div>
                 </div>
@@ -67,5 +77,18 @@ ph
 
 
 @section Scripts {
+
+    <script>
+        $(function () {
+
+            $('.datepicker').datepicker(
+                {
+                    dateFormat: 'yy-mm-dd'
+                }
+
+            );
+
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -42,6 +42,7 @@
                                 <th scope="col">Phone Number</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Building</th>
+                                <th scope="col">Move In Date</th>
                                 <th scope="col" style="width: 200px;">Action</th>
                             </tr>
                         </thead>
@@ -57,6 +58,7 @@
                                 <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Email)</td>
                                 <td>@Html.DisplayFor(modelItem => item.Building.BuildingName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DateMoveIn)</td>
                                 <td>
                                     <ul class="list-inline mb-0">
                                         <li class="list-inline-item">
@@ -71,8 +73,8 @@
                                             </a>
 
                                             <div class="dropdown-menu dropdown-menu-end">
-                                                <a asp-action="Details" asp-route-id="@item.TenantID" class="dropdown-item" >View</a>
-                                               
+                                                <a asp-action="Details" asp-route-id="@item.TenantID" class="dropdown-item">View</a>
+
                                             </div>
                                         </li>
                                     </ul>

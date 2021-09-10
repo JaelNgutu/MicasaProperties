@@ -3,11 +3,9 @@
 
 <head>
 
-    <meta charset="utf-8" />
+ 
     <title>Micasa properties | Admin</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
+  
     <!-- App favicon -->
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
@@ -17,6 +15,8 @@
     <link href="~/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="~/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="~/lib/jquery-ui-1.12.1/jquery-ui.min.css" rel="stylesheet" />
+
 
 </head>
 
@@ -52,9 +52,9 @@
                         </a>
                     </div>
 
-                   
 
-                    
+
+
                 </div>
 
                 <div class="d-flex">
@@ -67,22 +67,13 @@
                         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                              aria-labelledby="page-header-search-dropdown">
 
-                            <form class="p-3">
-                                <div class="m-0">
-                                    <div class="input-group">
-                                        <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                            
                         </div>
                     </div>
 
-        
 
-                   
+
+
 
                     <div class="dropdown d-none d-lg-inline-block ms-1">
                         <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
@@ -90,9 +81,9 @@
                         </button>
                     </div>
 
-                
 
-                   
+
+
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
@@ -127,9 +118,7 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
-                <i class="fa fa-fw fa-bars"></i>
-            </button>
+          
 
             <div data-simplebar class="sidebar-menu-scroll">
                 <br />
@@ -148,83 +137,56 @@
                         </li>
 
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
+                            <a asp-controller="" asp-action="Index" class=" waves-effect">
                                 <i class="uil-window-section"></i>
-                                <span>Layouts</span>
+                                <span>Admin</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="true">
                                 <li>
                                     <a href="javascript: void(0);" class="has-arrow">Vertical</a>
-                                    <ul class="sub-menu" aria-expanded="true">
-                                        <li><a href="layouts-dark-sidebar.html">Dark Sidebar</a></li>
-                                        <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                                        <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                                        <li><a href="layouts-boxed.html">Boxed Width</a></li>
-                                        <li><a href="layouts-preloader.html">Preloader</a></li>
-                                        <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
-                                    </ul>
+
                                 </li>
-                                <li>
-                                    <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
-                                    <ul class="sub-menu" aria-expanded="true">
-                                        <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                                        <li><a href="layouts-hori-topbar-dark.html">Topbar Dark</a></li>
-                                        <li><a href="layouts-hori-boxed-width.html">Boxed Width</a></li>
-                                        <li><a href="layouts-hori-preloader.html">Preloader</a></li>
-                                    </ul>
-                                </li>
+
                             </ul>
                         </li>
 
-                        <li class="menu-title">Apps</li>
+                        <li class="menu-title">Buildings</li>
 
                         <li>
-                            <a href="calendar.html" class="waves-effect">
+                            <a asp-controller="Buildings" asp-action="Index" class="waves-effect">
                                 <i class="uil-calender"></i>
-                                <span>Calendar</span>
+                                <span>All Buildings</span>
                             </a>
                         </li>
+                        <li>
+                            <a asp-controller="Buildings" asp-action="Create" class="waves-effect">
+                                <i class="uil-calender"></i>
+                                <span>Add Building</span>
+                            </a>
+                        </li>
+
+                        <li class="menu-title">Tenants</li>
 
                         <li>
-                            <a href="chat.html" class=" waves-effect">
-                                <i class="uil-comments-alt"></i>
-
-                                <span>Chat</span>
+                            <a asp-controller="Tenants" asp-action="Index" class="waves-effect">
+                                <i class="uil-calender"></i>
+                                <span>All Tenants</span>
                             </a>
                         </li>
-
                         <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="uil-store"></i>
-                                <span>Ecommerce</span>
+                            <a asp-controller="Tenants" asp-action="Create" class="waves-effect">
+                                <i class="uil-calender"></i>
+                                <span>Add Tenant</span>
                             </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="ecommerce-products.html">Products</a></li>
-                                <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                                <li><a href="ecommerce-orders.html">Orders</a></li>
-                                <li><a href="ecommerce-customers.html">Customers</a></li>
-                                <li><a href="ecommerce-cart.html">Cart</a></li>
-                                <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                                <li><a href="ecommerce-shops.html">Shops</a></li>
-                                <li><a href="ecommerce-add-product.html">Add Product</a></li>
-                            </ul>
                         </li>
 
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="uil-envelope"></i>
-                                <span>Email</span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="email-inbox.html">Inbox</a></li>
-                                <li><a href="email-read.html">Read Email</a></li>
-                            </ul>
-                        </li>
+
+
 
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="uil-invoice"></i>
-                                <span>Invoices</span>
+                                <span>Finances</span>
                             </a>
                             <ul class="sub-menu" aria-expanded="false">
                                 <li><a href="invoices-list.html">Invoice List</a></li>
@@ -255,7 +217,7 @@
                             <div class="page-title-box d-flex align-items-center justify-content-between">
                                 <h4 class="mb-0">Dashboard</h4>
 
-                               
+
 
                             </div>
                         </div>
@@ -280,7 +242,7 @@
 
             <footer class="footer">
                 <div class="container-fluid">
-                    
+
                 </div>
             </footer>
         </div>
@@ -288,8 +250,6 @@
 
     </div>
     <!-- END layout-wrapper -->
-    
-
     <!-- JAVASCRIPT -->
     <script src="~/lib/jquery/jquery.min.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -298,13 +258,15 @@
     <script src="~/lib/node-waves/waves.min.js"></script>
     <script src="~/lib/waypoints/lib/jquery.waypoints.min.js"></script>
     <script src="~/lib/jquery.counterup/jquery.counterup.min.js"></script>
+    <script src="~/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
     <!-- apexcharts -->
+
     <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
 
     <script src="assets/js/pages/dashboard.init.js"></script>
+    <script src="~/lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
 
-    
 
     <script src="~/js/app.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)

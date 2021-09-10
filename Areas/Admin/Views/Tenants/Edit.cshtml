@@ -37,8 +37,30 @@
                     <div class="col-sm-9">
                         <select asp-for="BuildingID" asp-items="@ViewBag.BuildingId" class="form-control">
                             <option value="0">Choose apartment</option>
+
                         </select>
                     </div>
+                </div>
+
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Date moved in</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="DateMoveIn" name="DateMoveIn" value="@Model.DateMoveIn?.ToString("yyyy-MM-dd")" class="datepicker form-control" />
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="row mb-4">
+                    <label class="col-sm-3 col-form-label">Date moved out</label>
+                    <div class="col-sm-9">
+                        <input type="text" id="DateMoveOut" name="DateMoveOut" value="@Model.DateMoveOut?.ToString("yyyy-MM-dd")" class="datepicker form-control" />
+
+                    </div>
+
+
                 </div>
 
                 <div class="row justify-content-end">
@@ -63,5 +85,18 @@
 </div>
 
 @section Scripts {
+
+    <script>
+        $(function () {
+
+            $('.datepicker').datepicker(
+                {
+                    dateFormat: 'yy-mm-dd'
+                }
+
+            );
+
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

@@ -4,14 +4,16 @@ using MicasaProperties.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace MicasaProperties.Migrations
 {
     [DbContext(typeof(MicasaContext))]
-    partial class MicasaContextModelSnapshot : ModelSnapshot
+    [Migration("20210910000244_remove occupying table")]
+    partial class removeoccupyingtable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
