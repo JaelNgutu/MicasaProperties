@@ -167,3 +167,6 @@ E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\bin\Debug\net
 E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Views\Account\Register.cshtml.g.cs
 E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
 E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Areas\Admin\Views\User\Index.cshtml.g.cs
+E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Areas\Admin\Views\Roles\Index.cshtml.g.cs
+E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Areas\Admin\Views\Roles\Create.cshtml.g.cs
+E:\Fundamentals\MicasaProperties\MicasaProperties\MicasaProperties\obj\Debug\net5.0\Razor\Areas\Admin\Views\Roles\Edit.cshtml.g.cs

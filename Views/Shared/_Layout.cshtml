@@ -92,13 +92,26 @@
 
 
 
-
-
                     <div class="dropdown d-inline-block">
-                        <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
-                            <i class="uil-cog"></i>
+
+
+                        @if (User?.Identity?.IsAuthenticated ?? false)
+                        {
+                            <a asp-controller="Account" asp-action="Logout" class="btn btn-primary">Logout @User.Identity.Name</a>
+                        }
+
+                        else
+                        {
+                            <a asp-controller="Account" asp-action="Login" class="btn btn-success">Login</a>
+
+                            <a asp-controller="Account" asp-action="Register" class="btn btn-primary">Register</a>
+                        }
+
+                        <button type="button" class="btn btn-success header-item  right-bar-toggle waves-effect">
                         </button>
                     </div>
+
+                   
 
                 </div>
             </div>
@@ -127,9 +140,7 @@
                 </a>
             </div>
 
-            <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect vertical-menu-btn">
-                <i class="fa fa-fw fa-bars"></i>
-            </button>
+          
 
             <div data-simplebar class="sidebar-menu-scroll">
                 <br />

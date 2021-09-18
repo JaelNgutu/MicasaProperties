@@ -37,7 +37,7 @@ namespace MicasaProperties.Controllers
         {
             AppUser appUser = new AppUser
             {
-                UserName = "UserThree",
+                UserName = user.Email,
                 Email = user.Email
             };
 
@@ -105,6 +105,8 @@ namespace MicasaProperties.Controllers
 
             return Redirect("/");
         }
+
+
 
 
     }
